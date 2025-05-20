@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import HeroSection from '../components/HeroSection.astro';
+import TeamMember from '../components/TeamMember.astro';
+const members = [
+  {
+    name: "Andrei Cristea",
+    details: "fizio-kinetoterapeut",
+  },
+  {
+    name: "Dr. Horatiu Badiu",
+    details: "ortoped",
+  },
+  {
+    name: "Dr. Mircea Tabacar",
+    details: "ortoped",
+    image: "tabacar.jpeg",
+  },
+  {
+    name: "Dr. Vladimir Pisarenco",
+    details: "ortoped",
+  },
+  {
+    name: "Dr. Corina Goia",
+    details: "ortoped pediatru",
+  },
+  {
+    name: "Vlad Cadis",
+    details: "fizio-kinetoterapeut",
+  },
+  {
+    name: "Amalia Timis",
+    details: "fizio-kineto",
+  },
+  {
+    name: "Paula Noje",
+    details: "nutritionist-dietetician",
+  },
+];
+---
+
+<Layout title="Echipa noastră - Health Academy">
+  <Header />
+  <main>
+    <HeroSection 
+      title="Echipa noastră" 
+      highlightText=""
+      description=""
+    />
+    
+    <section class="py-8 bg-white dark:bg-gray-800">
+      <div class="container-custom">
+        <div class="mb-12">
+          
+          <div class="flex flex-wrap justify-center gap-y-8">
+
+            {members.map((member) => {
+              const image = member.image ? member.image : "mystery.jpeg";
+              return (
+                <TeamMember name={member.name} details={member.details} image={"/src/assets/team/" + image} />
+              )
+            })}
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout> 

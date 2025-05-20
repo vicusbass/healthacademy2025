@@ -1,0 +1,110 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import HeroSection from '../components/HeroSection.astro';
+
+const articles = [
+  {
+    title: "Recuperare medicală - fizioterapie și kinetoterapie",
+    subTitle:
+      "Recuperarea medicală, inclusiv fizioterapia și kinetoterapia, este un domeniu dedicat restabilirii funcțiilor și mobilității, folosind metode terapeutice pentru a trata diverse afecțiuni fizice.",
+  },
+  {
+    title: "Reeducarea posturală globală",
+    subTitle:
+      "Reeducarea posturală globală este o metodă terapeutică care vizează corectarea dezechilibrelor posturale prin exerciții specifice, contribuind la îmbunătățirea alinierii și funcționării corpului.",
+  },
+  {
+    title: "Consultații ortopedie-traumatologie",
+    subTitle:
+      "Consultațiile de ortopedie-traumatologie se concentrează pe diagnosticarea, tratamentul și managementul afecțiunilor sistemului musculo-scheletic, inclusiv leziunile și deformările osoase sau articulare.",
+  },
+  {
+    title: "Intervenții medicale conservative",
+    subTitle:
+      "Intervențiile medicale conservative includ tratamente non-chirurgicale precum infiltrațiile cu PRP, acid hialuronic sau cortizon, și sunt utilizate pentru a ameliora durerea și a îmbunătăți funcționalitatea fără intervenții invazive.",
+  },
+  {
+    title: "Consultatii nutritie-dietetica",
+    subTitle:
+      "Consultațiile de nutriție-dietetică oferă evaluări și planuri personalizate de alimentație, orientate spre îmbunătățirea sănătății și gestionarea eficientă a greutății corporale prin dietă echilibrată.",
+  },
+  {
+    title: "Planuri alimentare personalizate",
+    subTitle:
+      "Planurile alimentare personalizate sunt create pentru a se adapta nevoilor nutriționale specifice ale fiecărui individ, ajutând la atingerea obiectivelor de sănătate și performanță printr-o alimentație optimizată.",
+  },
+  {
+    title: "Imagistica - ecografie musculoscheletală",
+    subTitle:
+      "Imagistica musculoscheletală prin ecografie este o tehnică non-invazivă utilizată pentru a vizualiza structurile moi precum mușchii, tendoanele și ligamentele, facilitând diagnosticarea precisă a diverselor afecțiuni.",
+  },
+  {
+    title: "Fizioterapie invazivă",
+    subTitle:
+      "Fizioterapia invazivă include tehnici precum electroliza percutanată intratisulară și electro-dryneedling, care folosesc stimulări directe în țesuturile afectate pentru a trata durerea și a îmbunătăți funcționalitatea.",
+  },
+  {
+    title: "Terapia sindromului miofascial dureros / punctelor trigger",
+    subTitle:
+      "Terapia sindromului miofascial dureros și a punctelor trigger implică utilizarea tehnicilor de dry needling, terapie manuală și IASTM (instrument assisted soft tissue mobilization) pentru a elibera tensiunile musculare și a reduce durerea cronică asociată cu punctele de declanșare.",
+  },
+  {
+    title: "Chiropractica - tehnica HVLA",
+    subTitle:
+      "Chiropractica folosind tehnica HVLA (High-Velocity Low-Amplitude) constă în aplicarea unor ajustări rapide și precise asupra articulațiilor, pentru a îmbunătăți aliniamentul și mobilitatea, reducând astfel durerea și disconfortul.",
+  },
+  {
+    title: "Pregătire sportivă / atletică de performanță",
+    subTitle:
+      "Pregătirea sportivă și atletică de performanță se concentrează pe dezvoltarea abilităților fizice specifice necesare pentru excelență în sport, inclusiv forță, viteză, agilitate și rezistență, printr-un program intensiv și personalizat.",
+  },
+  {
+    title: "Refacere post-efort",
+    subTitle:
+      "Refacerea post-efort include tehnici precum masajul mecanizat, presoterapia, stretchingul global activ și rolling-ul, toate destinate să accelereze recuperarea musculară și să reducă oboseala după activități fizice intense.",
+  },
+  {
+    title: "Masaj medical și de relaxare",
+    subTitle:
+      "Masajul medical și de relaxare combină tehnici terapeutice pentru a ameliora durerea și tensiunea musculară, îmbunătățind circulația și promovând relaxarea generală a corpului.",
+  },
+  {
+    title: "Tehnici de taping",
+    subTitle:
+      "Tehnicile de taping, folosind DynamicTape, KinesioTape sau alte tipuri de bandă elastică sau rigidă, sunt utilizate pentru a susține și stabiliza articulațiile și mușchii, facilitând astfel vindecarea și prevenind rănile în timpul activităților fizice.",
+  },
+];
+---
+
+<Layout title="Servicii - Health Academy">
+  <Header />
+  <main>
+    <HeroSection 
+      title="Serviciile noastre" 
+      highlightText=""
+      description="La HealthAcademy va oferim servicii profesioniste. Si le oferim cum ai tu nevoie pentru sanatatea ta."
+    />
+    
+    <section class="py-20 bg-white dark:bg-gray-800">
+      <div class="container-custom">
+        <div class="max-w-6xl mx-auto">          
+          <div class="grid md:grid-cols-2 gap-10 mb-16">
+            {articles.map((article) => (
+              <div class="card p-8 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div class="flex items-start mb-6">
+                <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">{article.title}</h3>
+              </div>
+              <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                {article.subTitle}
+              </p>
+            </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout> 

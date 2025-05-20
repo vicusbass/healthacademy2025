@@ -1,0 +1,86 @@
+---
+import { Image } from 'astro:assets';
+import logoSvg from '../assets/health-academy-logo-svg-whites.svg';
+---
+<header class="fixed w-full bg-white/90 dark:bg-secondary-950/90 backdrop-blur-xs z-50 py-4 transition-colors duration-300">
+  <div class="container-custom flex items-center justify-between">
+    <a href="/" class="flex items-center" aria-label="Go to homepage">
+      <!-- Health Academy Logo -->
+      <Image 
+        src={logoSvg} 
+        alt="Health Academy Logo" 
+        width={160} 
+        height={40}
+        class="h-10 w-auto"
+      />
+      <span class="ml-2 text-2xl font-display font-semibold text-secondary-900 dark:text-white">Health Academy</span>
+    </a>
+    
+    <!-- Right Aligned Group: Desktop Nav + Action Buttons -->
+    <div class="flex items-center gap-x-6">
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="/" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">Home</a>
+        <a href="/services" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">Tehnologii</a>
+        <a href="/services" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">Servicii</a>
+        <a href="/services" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">Afecțiuni</a>
+        <a href="/contact" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">Prețuri</a>
+        <a href="/company" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">Echipa</a>
+        <a href="/contact" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">Contact</a>
+      </nav>
+      
+      <div class="flex items-center space-x-4">
+        <button 
+          x-on:click="darkMode = !darkMode" 
+          class="p-2 rounded-full text-secondary-500 hover:text-secondary-700 dark:text-secondary-400 dark:hover:text-secondary-200 focus:outline-hidden focus:ring-2 focus:ring-primary-500"
+          aria-label="Toggle dark mode"
+        >
+          <svg x-show="!darkMode" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+          <svg x-show="darkMode" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+        </button>
+              
+        <!-- Mobile Menu Button and Dropdown -->
+        <div x-data="{ open: false, showAllPages: false }">
+          <button 
+            @click="open = !open"
+            class="md:hidden p-2 rounded-md text-secondary-600 hover:text-secondary-900 dark:text-secondary-300 dark:hover:text-white focus:outline-hidden focus:ring-2 focus:ring-primary-500"
+            aria-label="Toggle menu"
+          >
+            <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          
+        </div>
+      </div> <!-- End of action buttons div -->
+    </div> <!-- End of Right Aligned Group -->
+  </div>
+</header>
+
+<style>
+  /* Add styles for dark mode SVG in the header */
+  @media (prefers-color-scheme: dark) {
+    .dark\:fill-slate-800 { fill: #1e293b; }
+    .dark\:fill-slate-600 { fill: #475569; }  
+    .dark\:fill-slate-500 { fill: #64748b; }
+    .dark\:fill-slate-700 { fill: #334155; }
+    .dark\:stroke-slate-300 { stroke: #cbd5e1; }
+    .dark\:stroke-teal-500 { stroke: #14b8a6; }
+    .dark\:fill-white { fill: #ffffff; }
+  }
+  
+  /* Add hover animation to the logo */
+  header a:hover svg {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Hide Alpine.js elements before Alpine loads */
+  [x-cloak] { display: none !important; }
+</style>
