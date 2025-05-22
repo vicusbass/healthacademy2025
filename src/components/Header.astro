@@ -1,13 +1,14 @@
 ---
 import { Image } from 'astro:assets';
-import logoSvg from '../assets/health-academy-logo-svg-whites.svg';
+import logoWhite from '../assets/health-academy-logo-svg-whites.svg'; // For dark theme
+import logoBlack from '../assets/health-academy-logo-svg-blacks.svg'; // For light theme
 
 // Define menu items once to avoid duplication
 const menuItems = [
   { href: '/', label: 'Home' },
-  { href: '/services', label: 'Tehnologii' },
+  { href: '/tehnologii', label: 'Tehnologii' },
   { href: '/services', label: 'Servicii' },
-  { href: '/services', label: 'Afecțiuni' },
+  { href: '/afectiuni', label: 'Afecțiuni' },
   { href: '/contact', label: 'Prețuri' },
   { href: '/company', label: 'Echipa' },
   { href: '/contact', label: 'Contact' },
@@ -17,12 +18,21 @@ const menuItems = [
   <div class="container-custom flex items-center justify-between">
     <a href="/" class="flex items-center" aria-label="Go to homepage">
       <!-- Health Academy Logo -->
-      <Image 
-        src={logoSvg} 
-        alt="Health Academy Logo" 
-        width={160} 
+      <!-- Light mode logo -->
+      <Image
+        src={logoBlack}
+        alt="Health Academy Logo"
+        width={160}
         height={40}
-        class="h-10 w-auto"
+        class="h-10 w-auto logo-light-theme"
+      />
+      <!-- Dark mode logo -->
+      <Image
+        src={logoWhite}
+        alt="Health Academy Logo"
+        width={160}
+        height={40}
+        class="h-10 w-auto logo-dark-theme"
       />
       <span class="ml-2 text-2xl font-display font-semibold text-secondary-900 dark:text-white">Health Academy</span>
     </a>
@@ -107,6 +117,21 @@ const menuItems = [
 </header>
 
 <style>
+  .logo-light-theme {
+    display: block; /* Show by default for light mode */
+  }
+  .logo-dark-theme {
+    display: none;  /* Hide by default */
+  }
+
+  /* When dark mode is active (assumes 'dark' class on <html>) */
+  :global(html.dark) .logo-light-theme {
+    display: none;
+  }
+  :global(html.dark) .logo-dark-theme {
+    display: block;
+  }
+  
   /* Add styles for dark mode SVG in the header */
   @media (prefers-color-scheme: dark) {
     .dark\:fill-slate-800 { fill: #1e293b; }

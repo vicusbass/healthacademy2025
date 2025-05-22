@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import HeroSection from '../components/HeroSection.astro';
+import { Image } from 'astro:assets';
+import jsonData from '../data/tech.json'; 
+
+// Prepare image imports - this is the crucial part for Astro's Image component
+const itemsWithImages = await Promise.all(
+  jsonData.map(async (item) => {
+    if (item.src && typeof item.src === 'string' && item.src.trim() !== '') {
+      try {
+        // Dynamically import the image from the /src/assets/tech/ directory
+        const imageModule = await import(`../assets/tech/${item.src}`);
+        return {
+          ...item,
+          img: imageModule.default, // The actual image object for the Image component
+        };
+      } catch (error) {
+        console.error(`Failed to import image: ${item.src}`, error);
+        // Return item without img if import fails, so the page can still render text
+        return {
+          ...item,
+          img: null,
+        };
+      }
+    }
+    // If no src, or src is invalid, return the item without an img property
+    return {
+      ...item,
+      img: null,
+    };
+  })
+);
+---
+
+<Layout title="Tehnologii - Health Academy">
+  <Header />
+  <main>
+    <HeroSection 
+      title="Tehnologiile viitorului" 
+      highlightText=""
+      description="La HealthAcademy folosim cele mai moderne tehnologii din fizioterapie. Si le folosim exact cum ai tu nevoie pentru sanatatea ta."
+    />
+    
+    <section class="py-16 bg-white dark:bg-gray-800">
+      <div class="container-custom">
+        {itemsWithImages.map((item) => (
+          <div class="mb-24">
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-12">
+              <div>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">{item.title}</h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-6">
+                  {item.subTitle}
+                </p>
+              </div>
+              <div class="rounded-lg overflow-hidden shadow-xl">
+                {item.img && (
+                  <Image
+                    src={item.img}
+                    alt={item.imgOneAlt}
+                  />
+                )}
+              </div>
+            </div>
+        </div>
+        ))}
+        
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout> 

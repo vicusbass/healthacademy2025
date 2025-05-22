@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import HeroSection from '../components/HeroSection.astro';
+import data from "../data/afflictions.json";
+
+// Sort data by name
+data.sort((a, b) => a.name.localeCompare(b.name));
+---
+
+<Layout title="Afecțiuni - Health Academy">
+  <Header />
+  <main>
+    <HeroSection 
+      title="Afecțiuni / Ce tratăm?" 
+      highlightText=""
+      description="O listă a câtorva dintre afecțiunile pe care le tratăm."
+    />
+    
+    <section class="py-20 bg-white dark:bg-gray-800">
+      <div class="container-custom">
+        <div class="max-w-6xl mx-auto">          
+          <div class="grid md:grid-cols-2 gap-10 mb-16">
+            {data.map((d) => (
+              <div class="card p-8 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div class="flex items-start mb-6">
+                <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">{d.name}</h3>
+              </div>
+              <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                {d.details}
+              </p>
+            </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout> 

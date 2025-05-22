@@ -1,0 +1,96 @@
+[
+  {
+    "title": "Desmotec E.Board, D.Full, V.Full",
+    "subTitle": "Desmotec este un lider în tehnologia de reabilitare, oferind soluții avansate pentru antrenamentele bazate pe izocinetism și reabilitarea musculară",
+    "imgOneAlt": "Desmotec picture.",
+    "src": "desmotec.png"
+  },
+  {
+    "title": "Kineo Intelligent Load",
+    "subTitle": "Kineo Intelligent Load este un sistem revoluționar de antrenament care permite personalizarea și ajustarea automată a sarcinii pentru optimizarea forței și a recuperării musculare.",
+    "imgOneAlt": "Kineo Intelligent Load",
+    "src": "kineo-transformed.png"
+  },
+  {
+    "title": "Reaxing Lights PRO",
+    "subTitle": "Reaxing Lights PRO este un sistem inovativ de antrenament interactiv, care folosește lumini pentru a îmbunătăți coordonarea, agilitatea și timpul de reacție.",
+    "imgOneAlt": "Reaxing Lights PRO",
+    "src": "reaxing.webp"
+  },
+  {
+    "title": "Mad-up BFR",
+    "subTitle": "Mad-up BFR este un sistem de antrenament prin restricție a fluxului sanguin, conceput pentru a crește forța și masa musculară prin aplicarea unei presiuni controlate în timpul exercițiilor.",
+    "imgOneAlt": "Mad-up BFR",
+    "src": "madupbfr.jpeg"
+  },
+  {
+    "title": "ActivForce 2",
+    "subTitle": "ActivForce 2 este un dispozitiv digital de măsurare a forței, destinat profesioniștilor din domeniul sănătății pentru a evalua și monitoriza performanța musculară și recuperarea pacienților.",
+    "imgOneAlt": "ActivForce 2",
+    "src": "active_force_2.webp"
+  },
+  {
+    "title": "Senaptec Strobe Classic",
+    "subTitle": "Senaptec Strobe Classic este un dispozitiv de antrenament vizual ce îmbunătățește reacțiile și coordonarea, prin utilizarea unor ochelari speciali care stimulează abilitățile perceptuale.",
+    "imgOneAlt": "Senaptec Strobe Classic",
+    "src": "senaptec.webp"
+  },
+  {
+    "title": "RecoveryAir",
+    "subTitle": "RecoveryAir este un sistem de compresie pneumatică conceput pentru a îmbunătăți circulația sanguină și a accelera recuperarea musculară prin masaj secvențial.",
+    "imgOneAlt": "RecoveryAir",
+    "src": "recoveryair.jpeg"
+  },
+  {
+    "title": "Compex",
+    "subTitle": "Compex este un stimulator muscular electric care ajută la îmbunătățirea performanței atletice, la recuperare rapidă și la întărirea musculaturii prin programe de electrostimulare.",
+    "imgOneAlt": "Compex",
+    "src": "compex.webp"
+  },
+  {
+    "title": "Theragun Pro",
+    "subTitle": "Theragun PRO este un dispozitiv de masaj terapeutic de înaltă performanță, proiectat pentru a reduce durerea musculară și a îmbunătăți recuperarea prin terapie percusivă profundă.",
+    "imgOneAlt": "Theragun Pro",
+    "src": "theragun.webp"
+  },
+  {
+    "title": "MotionGuidance",
+    "subTitle": "MotionGuidance este un sistem vizual de feedback care îmbunătățește controlul mișcării și coordonarea prin ghidare vizuală directă.",
+    "imgOneAlt": "MotionGuidance"
+  },
+  {
+    "title": "EPI (electroliza percutanată intratisulară)",
+    "subTitle": "Este o tehnică avansată de terapie fizică care folosește impulsuri electrice pentru a trata țesuturile moi și a accelera recuperarea în cazul leziunilor musculare.",
+    "imgOneAlt": "EPI (electroliza percutanata intratisulara)"
+  },
+  {
+    "title": "AS Super 4 Digital",
+    "subTitle": "AS Super 4 Digital este un aparat modern de electroterapie care oferă diverse tratamente pentru stimularea musculară și alinarea durerii, adaptabil pentru necesitățile individuale ale fiecărui pacient.",
+    "imgOneAlt": "AS Super 4 Digital"
+  },
+  {
+    "title": "Globus Diacare",
+    "subTitle": "Globus Diacare este un dispozitiv de terapie prin diatermie care utilizează căldura pentru a stimula circulația sângelui și a accelera procesele naturale de vindecare ale corpului.",
+    "imgOneAlt": "Globus Diacare"
+  },
+  {
+    "title": "Globus Medisound",
+    "subTitle": "Globus Medisound este un sistem terapeutic care folosește ultrasunete pentru a trata afecțiuni musculo-scheletice, stimulând regenerarea țesuturilor și reducând inflamația.",
+    "imgOneAlt": "Globus Medisound"
+  },
+  {
+    "title": "Ecografie Vinno",
+    "subTitle": "Ecografie Vinno reprezintă o tehnologie de imagistică avansată care oferă imagini de înaltă claritate, utilizată în diagnosticarea precisă și monitorizarea condițiilor medicale în timp real.",
+    "imgOneAlt": "Ecografie Vinno"
+  },
+  {
+    "title": "Powerplay",
+    "subTitle": "Powerplay este un sistem portabil de terapie prin compresie și crioterapie, ideal pentru reducerea durerii și inflamației, facilitând o recuperare rapidă și eficientă.",
+    "imgOneAlt": "Powerplay"
+  },
+  {
+    "title": "HyperVolt",
+    "subTitle": "HyperVolt este un dispozitiv de masaj cu percuție de înaltă intensitate, conceput pentru a relaxa mușchii tensionați, a îmbunătăți mobilitatea și a accelera recuperarea după efort fizic.",
+    "imgOneAlt": "HyperVolt"
+  }
+]
