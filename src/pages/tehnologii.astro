@@ -1,7 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import HeroSection from '../components/HeroSection.astro';
 import { Image } from 'astro:assets'; 
 import jsonData from '../data/tech.json'; 
@@ -35,7 +33,6 @@ const itemsWithImages = await Promise.all(
 ---
 
 <Layout title="Tehnologii - Health Academy">
-  <Header />
   <main>
     <HeroSection 
       title="Tehnologiile viitorului" 
@@ -69,5 +66,4 @@ const itemsWithImages = await Promise.all(
       </div>
     </section>
   </main>
-  <Footer />
 </Layout> 
