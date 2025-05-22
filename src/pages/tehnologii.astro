@@ -3,33 +3,32 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import HeroSection from '../components/HeroSection.astro';
-import { Image } from 'astro:assets';
+import { Image } from 'astro:assets'; 
 import jsonData from '../data/tech.json'; 
 
-// Prepare image imports - this is the crucial part for Astro's Image component
+// Let TypeScript infer the type of allTechImages
+const allTechImages = 
+  import.meta.glob('/src/assets/tech/*.{jpeg,jpg,png,webp,svg}');
+
 const itemsWithImages = await Promise.all(
   jsonData.map(async (item) => {
+    let resolvedImage = null; 
     if (item.src && typeof item.src === 'string' && item.src.trim() !== '') {
-      try {
-        // Dynamically import the image from the /src/assets/tech/ directory
-        const imageModule = await import(`../assets/tech/${item.src}`);
-        return {
-          ...item,
-          img: imageModule.default, // The actual image object for the Image component
-        };
-      } catch (error) {
-        console.error(`Failed to import image: ${item.src}`, error);
-        // Return item without img if import fails, so the page can still render text
-        return {
-          ...item,
-          img: null,
-        };
+      const imagePathKey = `/src/assets/tech/${item.src}`;
+      if (allTechImages[imagePathKey]) {
+        try {
+          const imageModule = await allTechImages[imagePathKey](); 
+          resolvedImage = (imageModule as any).default; 
+        } catch (error) {
+          console.error(`Failed to load image module for: ${item.src} via key ${imagePathKey}`, error);
+        }
+      } else {
+        console.warn(`Image with key ${imagePathKey} not found in import.meta.glob result. Check path and pattern.`);
       }
     }
-    // If no src, or src is invalid, return the item without an img property
     return {
       ...item,
-      img: null,
+      img: resolvedImage, 
     };
   })
 );
