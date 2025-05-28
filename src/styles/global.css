@@ -141,7 +141,7 @@
 }
 
 @utility section {
-  @apply py-16 md:py-24;
+  @apply pt-8 pb-16 md:pt-12 md:pb-24;
 }
 
 @utility card {
