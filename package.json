@@ -17,6 +17,7 @@
     "alpinejs": "^3.13.5",
     "astro": "^5.7.13",
     "astro-icon": "^1.1.5",
+    "marked": "^15.0.12",
     "tailwindcss": "^4.1.3"
   }
 }
