@@ -1,22 +1,23 @@
 [
     {
       "name": "Afectiuni si traumatisme ale genunchiului",
-      "details":
-        "leziuni si reconstructii ligamentare (LIA, LIP, LCM, LCL), leziuni si reparatii meniscale, leziuni si reconstructii osteo-condrale, sindrom dureros patelo-femural, luxatii si malpozitionare patelofemurala"
+      "details": "leziuni si reconstructii ligamentare (LIA, LIP, LCM, LCL), leziuni si reparatii meniscale, leziuni si reconstructii osteo-condrale, sindrom dureros patelo-femural, luxatii si malpozitionare patelofemurala"
     },
     {
-      "name": "Artrofibroza"
+      "name": "Artrofibroza",
+      "details": "Întărirea și îngroșarea țesuturilor după traumatisme sau operații, limitând mobilitatea articulară."
     },
     {
       "name": "Afectiuni si traumatisme ale umarului",
-      "details":
-        "leziuni ale coafei rotatorilor, leziuni de labrum, luxatii, impingement"
+      "details": "leziuni ale coafei rotatorilor, leziuni de labrum, luxatii, impingement"
     },
     {
-      "name": "Entorse de glezna si antepicior"
+      "name": "Entorse de glezna si antepicior",
+      "details": "Leziuni ale ligamentelor gleznei sau antepiciorului cauzate de mișcări bruște."
     },
     {
-      "name": "Entorse de pumn"
+      "name": "Entorse de pumn",
+      "details": "Întinderi sau rupturi ale ligamentelor articulației pumnului."
     },
     {
       "name": "Afectiuni ale cotului",
@@ -32,68 +33,83 @@
     },
     {
       "name": "Fracturi si traumatisme",
-      "details":
-        "tratament conservator sau stabilizate chirurgical. Fracturi tibio-peroniere / bimaleolare / trimaleolare, fracturi de femur / cap femural, fracturi de cap humeral, fracturi de platou tibial, fracturi ale antepiciorului, fracturi ale pumnului si mainii, fracturi de bazin si vertebrale"
+      "details": "tratament conservator sau stabilizate chirurgical. Fracturi tibio-peroniere / bimaleolare / trimaleolare, fracturi de femur / cap femural, fracturi de cap humeral, fracturi de platou tibial, fracturi ale antepiciorului, fracturi ale pumnului si mainii, fracturi de bazin si vertebrale"
     },
     {
-      "name": "Contuzii osoase si de tesuturi moi"
+      "name": "Contuzii osoase si de tesuturi moi",
+      "details": "Lovituri sau traumatisme care afectează oasele și țesuturile moi fără fractură."
     },
     {
-      "name": "Tendinopatie Achiliana"
+      "name": "Tendinopatie Achiliana",
+      "details": "Inflamație sau degenerare a tendonului lui Ahile."
     },
     {
-      "name": "Tendinopatie patelara"
+      "name": "Tendinopatie patelara",
+      "details": "Inflamație sau leziune a tendonului rotulian."
     },
     {
-      "name": "Tendinopatie cvadricipitala"
+      "name": "Tendinopatie cvadricipitala",
+      "details": "Afectare inflamatorie sau degenerativă a tendonului cvadricepsului."
     },
     {
-      "name": "Tendinopatie a ischiogambierilor"
+      "name": "Tendinopatie a ischiogambierilor",
+      "details": "Inflamație sau leziune a tendoanelor ischiogambierilor."
     },
     {
-      "name": "Tendinopatie a adductorilor"
+      "name": "Tendinopatie a adductorilor",
+      "details": "Inflamație sau leziune a tendoanelor adductorilor coapsei."
     },
     {
-      "name": "Tendinopatie a supraspinosului / infraspinosului / subscapularului"
+      "name": "Tendinopatie a supraspinosului / infraspinosului / subscapularului",
+      "details": "Afectare a tendoanelor umărului (coafa rotatorilor)."
     },
     {
-      "name": "Fasciita plantara"
+      "name": "Fasciita plantara",
+      "details": "Inflamație a fasciei plantare de la nivelul tălpii piciorului."
     },
     {
-      "name": "Leziuni musculare ale dreptului femural"
+      "name": "Leziuni musculare ale dreptului femural",
+      "details": "Ruptură sau întindere a mușchiului drept femural al coapsei."
     },
     {
       "name": "Leziuni musculare ale adductorilor",
       "details": "lung si scurt"
     },
     {
-      "name": "Leziuni musculare ale ischiogambierilor"
+      "name": "Leziuni musculare ale ischiogambierilor",
+      "details": "Leziuni sau rupturi ale mușchilor ischiogambieri."
     },
     {
-      "name": "Leziuni musculare ale iliopsoasului"
+      "name": "Leziuni musculare ale iliopsoasului",
+      "details": "Leziuni sau întinderi ale mușchiului iliopsoas."
     },
     {
       "name": "Leziuni musculare ale gambei",
       "details": "gastrocnemieni, solear"
     },
     {
-      "name": "Fibroze si cicatrici cronice ale tesuturilor moi"
+      "name": "Fibroze si cicatrici cronice ale tesuturilor moi",
+      "details": "Întărirea sau cicatrizarea excesivă a țesuturilor după leziuni."
     },
     {
-      "name": "Disfunctii fasciale"
+      "name": "Disfunctii fasciale",
+      "details": "Tulburări ale fasciei care afectează mobilitatea și funcția musculară."
     },
     {
-      "name": "Sindroame de compartiment"
+      "name": "Sindroame de compartiment",
+      "details": "Presiune crescută în compartimentele musculare, afectând circulația și nervii."
     },
     {
-      "name": "Dureri de spate"
+      "name": "Dureri de spate",
+      "details": "Durere localizată la nivelul coloanei vertebrale lombare, toracale sau cervicale."
     },
     {
       "name": "Tulburari de statica vertebrala / tulburari posturale",
       "details": "hiperlordoze, cifoze, scolioze, asimetrii ale bazinului, platfus"
     },
     {
-      "name": "Dureri si afectiuni cranio-cervicale"
+      "name": "Dureri si afectiuni cranio-cervicale",
+      "details": "Durere sau disfuncție la nivelul capului și gâtului."
     },
     {
       "name": "Dureri de cap, faciale",
@@ -105,15 +121,22 @@
     },
     {
       "name": "Sindroame miofasciale dureroase",
-      "details":
-        "reprezita peste 90% din durerile resimtite pe parcursul vietii fiind adesea mis-diagnosticate. Resimtite ca pattern-uri tipice de durere care pot replica dureri articulare, musculare, neurologice."
+      "details": "reprezita peste 90% din durerile resimtite pe parcursul vietii fiind adesea mis-diagnosticate. Resimtite ca pattern-uri tipice de durere care pot replica dureri articulare, musculare, neurologice."
     },
     {
-      "name": "Contracturi musculare / hipertonicitate, suprasolicitare"
+      "name": "Contracturi musculare / hipertonicitate, suprasolicitare",
+      "details": "Tensiune excesivă sau contracție prelungită a mușchilor."
     },
     {
       "name": "Disfunctii si asimetrii biomecanice",
-      "details":
-        "de forta, stabilitate si mobilitate, tulburari ale lantului kinetic"
+      "details": "de forta, stabilitate si mobilitate, tulburari ale lantului kinetic"
+    },
+    {
+      "name": "Genunchiul post-operator",
+      "details": "Afectiuni si recuperare după intervenții chirurgicale la genunchi, inclusiv protezare, reconstrucții ligamentare și repararea meniscului."
+    },
+    {
+      "name": "Deficiențe posturale: scolioză, cifoză, hiperlordoză, genu valgum/varum, platfus",
+      "details": "Tulburări de aliniere ale coloanei vertebrale sau membrelor inferioare, incluzând scolioza, cifoza, hiperlordoza, genul valgum/varum și platfus."
     }
   ]
