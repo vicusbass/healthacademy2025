@@ -1,0 +1,515 @@
+// ye get_max() use hota hai hide wale fxn me, and add_delivery k get_a2c me
+
+function get_max(arr){
+	return Math.max.apply(Math, arr);
+}
+
+function onlyUnique(value, index, self) {
+	return self.indexOf(value) === index;
+}
+
+// hmare internal fxns
+function final_polish( master_array ){
+	let final_array = [];
+	let n = master_array.length;
+	for( i=0; i<n; i++ )
+	{
+		if(master_array[i].childElementCount == 0){
+			final_array.push(master_array[i]);
+		}
+	}
+	return final_array;
+}
+
+
+function polish( master_array ){
+	let n = master_array.length;
+	for(i=0; i<n; i++){
+		let cccc = master_array[i];
+		if(cccc.childElementCount > 0){
+			let carr = [].slice.call(cccc.children);
+			master_array = master_array.concat(carr);
+		}
+	}
+	master_array = master_array.filter(onlyUnique);
+	return master_array;
+}
+
+// utility fxns
+
+function get_forms(){
+	let forms = document.querySelectorAll('form[action*="cart/Add" i]');
+	return forms;
+}
+
+
+function get_childs(form){
+	let c = [].slice.call(form.children);
+	for(let i=0; i<25; i++){
+		c = polish(c);
+	}
+	return c;
+}
+
+function get_childless_childs(form){
+	let c = get_childs(form);
+	return final_polish(c);
+}
+
+
+function get_form_variant_id(form){
+	let p = {}; // potential_ids
+	// case 1 - input hai and usme id hai
+	let c = get_childs(form);
+	for(let i=0;i<c.length;i++){
+		if(c[i].tagName.toLowerCase() == 'input'){
+			if(c[i].name.toLowerCase() == 'id'){
+				p['input_se'] = c[i].value;
+			}
+		}
+	}
+
+	//case 2 - select hai and usme id hai
+	//
+	for(let i=0;i<c.length;i++){
+                if(c[i].tagName.toLowerCase() == 'select'){
+                        if(c[i].name.toLowerCase() == 'id'){
+                                p['select_se'] = c[i].value;
+                        }
+                }
+        }
+
+
+	// case 3 - na input se mil ra, na select se, ya fir galat mil ra
+	// select ya input me se ek to hota he hai, dono eksath ni hote, and missing b ni hote
+	// aisa ab  tak dekha gya hai
+	return p;
+}
+
+
+// local
+function local_clear(){
+	localStorage.setItem('pwn','{}');
+}
+
+function local_set(keyy,vallue){
+	let pwnv = JSON.parse(localStorage.getItem('pwn'));
+	if(!pwnv){ pwnv={}}
+	pwnv[keyy] = vallue;
+	localStorage.setItem('pwn',JSON.stringify(pwnv));
+}
+
+function get_page_type(){
+	let page_type = window.ShopifyAnalytics.meta.page.pageType;
+	return page_type;
+	// home, product, collection, page(for contact page n stuff), {} for cart page, {} for thankyou page
+}
+
+function get_product_id(){
+	return window.ShopifyAnalytics.meta.product.id;
+}
+
+
+function get_variant_on_prod_page(){
+	let aa = if_variant_in_query_parameter();
+	if (aa == 'not found'){
+		if(!! window.ShopifyAnalytics.meta.selectedVariantId){
+			return window.ShopifyAnalytics.meta.selectedVariantId;                
+		} else {
+			return window.ShopifyAnalytics.meta.product.variants[0].id;
+		}
+	} else {
+		return aa;
+	}
+}
+
+
+function if_variant_in_query_parameter(){
+	let searchParams = new URLSearchParams(window.location.search)
+		if ( searchParams.has('variant') ){
+			let param = searchParams.get('variant');
+			return param;
+		}
+	return "not found";
+}
+
+function local_get(keyy)
+{
+	let pwnv = JSON.parse(localStorage.getItem('pwn'));
+	if(!pwnv){ return false;}
+	return pwnv[keyy];
+}
+
+
+//btn_txt is small case, without spaces
+//function hide_btn(btn_txt, form) {
+function hide_btn(form) {
+	//let a = btn_txt;
+	let master_array = get_childs(form);
+	let temp = []; // isme saare element with text = a
+	let bache = []; // sabke bacho ka count, taaki sabse jaada bacho wala, dada nikal k usko remove krske, grandchild ko remove krne se span remove hota, khali buttton reh jata
+	for (let i = 0; i < master_array.length; i++) 
+	{
+		let text = master_array[i].textContent.toLowerCase().replace(/\s/g, '');
+		if (buy_now_txts.includes(text)) {
+			temp.push(master_array[i]);
+			bache.push(master_array[i].childElementCount);
+		}
+	}
+	for (let i = 0; i < temp.length; i++) {
+		if (temp[i].childElementCount == get_max(bache)) {
+			temp[i].remove();
+		}
+	}
+
+}
+
+
+// a='addtocart', b="Pre-Order"
+//temp is just temporary array. we use it because our master array will not change
+//function replace_btn(a,b,form)
+function replace_btn(b,form)
+{
+	//temp = final_polish( master_array ); // returns child with 0 children, text replace grandchild pe krna
+	let temp = get_childless_childs(form);
+	for(let i=0;i<temp.length;i++)
+	{
+		let text = temp[i].textContent.toLowerCase().replace(/\s/g,'');
+		if(a2c_txts.includes(text)){
+			temp[i].textContent=b;
+		}
+	}
+}
+
+
+
+function append_order_type_input(form)
+{
+	if(form.querySelectorAll('.pp_a').length < 1){
+		let div = document.createElement('div');
+		div.innerHTML = '<input class="pp_a" name="properties[Type]" type="text" value="Preorder" style="display:none;"></input>';
+		form.appendChild(div);
+	}
+}
+
+function append_selling_plan(form, v){
+	let sp = get_selling_plan(v);
+	if(sp){
+                if( form.querySelectorAll('.pp_aSP').length < 1){
+                let div2 = document.createElement('div');
+                div2.innerHTML = "<input name='selling_plan' class='pp_aSP' value='"+sp+"' style='display:none;'></input>";
+                form.appendChild(div2);
+                }
+        }
+}
+
+function remove_order_type_input(form)
+{
+	if( form.querySelectorAll(".pp_a").length > 0 ){
+		form.querySelectorAll(".pp_a")[0].remove();
+	}
+	if( form.querySelectorAll(".pp_aSP").length > 0 ){
+                form.querySelectorAll(".pp_aSP")[0].remove();
+        }
+}
+
+
+a2c_txts = [
+		"indenwarenkorblegen",
+		"addtocart",
+		"addtobag",
+		"addtobasket",
+		"ajouteraupanier",
+		"indenwarenkorb",
+		"indeneinkaufswagen",
+		"agregaralcarrito",
+		"añadiralcarrito",
+		"añadiralacesta",
+		"加入購物車",
+		"加入購物清單",
+		"加入购物车",
+		"aggiungialcarrello",
+		"Додадивокошничка",
+		"カートに追加する",
+		"j'ajouteàmonpanier",
+		"sepeteekle",
+		"abinskörbchen",
+		"aanwinkelwagentoevoegen",
+		"alcarrito",
+		"leggihandlekurv",
+		"adaugaincos",
+		"カートに追加",
+		"přidat",
+		"přidatdokošíku",
+		"přidatdobatohu",
+		"přidatdotašky",
+		"adicionaraocarrinho",
+		"أضفإلىالسلة",
+		"dodajdokoszyka",
+		"lägivarukorb",
+		"läglvarukorb",
+		"läggivarukorb",
+		"lägglvarukorb",
+		"indenwinkaufswagenlegen",
+		"läggivarukorg",
+		"添加到购物车",
+		"dodajvvoziček",
+		"dodajvtorbo",
+		"dodajvkošarico",
+		"j'ajouteàmonpanier🛒",
+		"lisääostoskoriin",
+		"この商品をカートへ入れる",
+		"toevoegenaanwinkelwagen",
+		"adăugațiîncoș",
+		"indeneinkaufswagenlegen",
+		"放入購物車",
+		"addtoshoppingcart",
+		"lægikurven",
+		"הוספהלסל",
+		"tilføjtilkurv",
+		"inwarenkorb",
+		"voegtoeaanwinkelwagen",
+		"hozzáadásakosárhoz",
+		"tambahkankekeranjang",
+		"カートに入れる",
+		"aggiungialcalderone",
+		"masukkankekeranjang",
+		"카트에추가",
+		"thêmvàogiỏhàng",
+		"ajouter",
+		"tilføjkurv",
+		"lægiindkøbskurv",
+		"adaugîncoș",
+		"läggivarukorgen",
+		"カートに追加するにゃ！",
+		"läggtillikundvagnen      ",
+		"dodajukorpu",
+		"장바구니에추가",
+		"προσθήκηστοκαλάθι",
+		"føjtilindkøbskurv",
+		"добавивколичката",
+		"bestelnu",
+		"bætaíkörfu",
+		"leggtilhandlekurv",
+		"shopnow",
+		"shopnu",
+	];
+
+
+buy_now_txts = [
+		"jetztkaufenmitgooglepaymit",
+		"weiterebezahlmöglichkeiten",
+		"buyitnow",
+		"buynowwithgooglepaybuywith",
+		"buynow",
+		"achetezmaintenant",
+		"achetermaintenant",
+		"kaufen",
+		"jetztkaufen",
+		"comprarahora",
+		"立刻購買",
+		"立即购买",
+		"acquistaora",
+		"今すぐ購入",
+		"hemensatınalın",
+		"nukopen",
+		"kjøpnå",
+		"koupitteď",
+		"kupnyní",
+		"kupteraz",
+		"köpnu",
+		"comprar",
+		"kupitezdaj",
+		"belisekarang",
+		"buynowwithshoppay",
+		"αγοράμεαντικαταβολή",
+	];
+
+
+
+console.log("Helper js - script loaded!");
+
+
+function save_variant_yes_no(){
+	//window.location.pathname ana chaiye, and cart bi ache se he /cart etc jese
+	if(window.location.href.includes('cart')){
+		return;
+	}
+	url  = "https://pre.bossapps.co/api/js/motion-guidance.myshopify.com/variants";
+	fetch(url).then(r => r.json()).then(data => {
+	local_set('vdata',data);
+	//console.log(data);
+	});}
+
+function get_variant_yes_no(v){
+	let r = local_get('vdata');
+	if(!r){return 'no';}// mtlb data hale server to aaya ni, r null aa, local_clear() naal eda hunda, until we fetch the request with save_variant_yes_no
+	// mtlb agar value hai
+	if(r[v]){
+		return r[v];
+	}else{
+		return 'no';//mtlb bhai ne v select he ni kra
+	}
+}
+
+function get_selling_plan(v){
+        let r = local_get('vdata');
+	if(!r){return flase;}
+
+        // mtlb agar value hai
+        if(r[v+'SP']){
+                return r[v+'SP'];
+        }
+        return false;
+}
+
+
+function replace_controller(form)
+{
+	//for ( let i=0; i < a2c_txts.length; i++ ){
+	//	replace_btn( a2c_txts[i], "Pre Order Now: Est Ship 4-6 weeks",form );
+	//}
+	replace_btn(  "Pre Order Now: Est Ship 4-6 weeks",form );
+}
+
+function hide_btn_controller(form)
+{
+	//for ( let i=0; i < buy_now_txts.length; i++ ){
+          //      hide_btn( buy_now_txts[i],form);
+	//}
+	hide_btn(form);
+}
+
+
+
+// add delivery ka helper hai ye.
+//btn_txt is small case, without spaces
+//ye jaan buj k global rakha hai
+a2c_pre = a2c_txts.concat("Pre Order Now: Est Ship 4-6 weeks".toLowerCase().split(' ').join(''));
+function get_a2c(form) {
+	for(let yo = 0;yo<a2c_pre.length;yo++){
+		let a = a2c_pre[yo];
+	        let master_array = get_childs(form);
+        	let temp = []; // isme saare element with text = a
+	        let bache = []; // sabke bacho ka count, taaki sabse jaada bacho wala, dada nikal k usko remove krske, grandchild ko 	remove krne se span remove hota, khali buttton reh jata
+	        for (let i = 0; i < master_array.length; i++) 
+	        {
+	                let text = master_array[i].textContent.toLowerCase().replace(/\s/g, '');
+	                if (text == a) {
+	                        temp.push(master_array[i]);
+	                        bache.push(master_array[i].childElementCount);
+	                }
+	        }
+	        for (let i = 0; i < temp.length; i++) {
+	                if (temp[i].childElementCount == get_max(bache)) {
+	                       return temp[i];
+	                }
+	        }
+	}
+	return 'nahi mila a2c';
+}
+
+
+delivery_info_text = "0\u00A0\u00A0"; //ye nbsp ka unicode hai
+preorder_btn_txt = "Pre Order Now: Est Ship 4-6 weeks";
+order_type_text = "Preorder";
+
+function add_delivery(form){
+	if (get_page_type() != 'product'){return;}
+        if(form.getElementsByClassName('pnda-delivery-info').length > 0){
+                return;
+        }
+        let a2c = get_a2c(form);
+	if (a2c == 'nahi mila a2c'){return;}
+        let p = document.createElement('p');
+        let t = document.createTextNode(delivery_info_text);
+        p.appendChild(t);
+        p.classList.add("pnda-delivery-info");
+        a2c.parentElement.prepend(p);
+}
+
+function remove_delivery(form){
+	try{
+        form.getElementsByClassName('pnda-delivery-info')[0].remove();
+}
+	catch (err){
+//		console.log('err while removing delivery info',form);
+	}
+}
+
+// eh warning suppress karda, on click te chalda,
+// par ui hale v slow krrea azat da
+
+/// logic
+//local_clear();
+save_variant_yes_no();
+
+async function run(form){
+        let v = await get_form_variant_id(form);
+	if(!v['select_se']){
+		v = v['input_se'];
+	} else {
+		v = v['select_se'];
+	}
+        let yn = await get_variant_yes_no(v);
+        if(yn == 'yes'){
+       await replace_controller(form);
+	     await     hide_btn_controller(form);
+		await append_order_type_input(form);
+		await append_selling_plan(form, v);
+		
+        } else {
+	        await remove_order_type_input(form);
+		        }
+}
+
+async function runner(){
+        let f = get_forms();
+        for (let i=0;i<f.length;i++){
+               await run(f[i]);
+        }
+}
+
+console.log('clean logic js - script loaded');
+
+
+// total_time lets say 5000
+// interval_time say 500
+function setForX(fxn_name,total_time,interval_time){
+	let ms = setInterval(fxn_name,interval_time);
+	setTimeout(function(){clearInterval(ms);},total_time);
+}
+
+// ye block try krega k load ho body and uspe event set ho
+// set hote he band hojega ye try krna
+var intt = setInterval(setOnClick, 600);
+function setOnClick(fxn_name,total_time,interval_time){
+	if(document.getElementsByTagName("body")[0]){
+                document.getElementsByTagName("body")[0].addEventListener('click',function (){
+                	setForX(fxn_name,total_time,interval_time);
+                });
+                clearInterval(intt);
+        }
+}
+
+
+setOnClick(runner,3200,520); // this works good on azatmard hence should work good on all
+setForX(runner,6000,500);
+
+
+
+
+
+
+function remove_otp(){
+	let elem = document.getElementsByClassName("bsub-widget");
+	if( elem.length ){
+		elem[0].remove()
+	}
+}
+
+function replace_controller(form)
+{
+	replace_btn( preorder_btn_txt, form );
+	remove_otp();
+}

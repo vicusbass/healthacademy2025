@@ -1,45 +1,147 @@
 [
   {
-    "title": "Desmotec E.Board, D.Full, V.Full",
-    "subTitle": "Desmotec este un lider în tehnologia de reabilitare, oferind soluții avansate pentru antrenamentele bazate pe izocinetism și reabilitarea musculară",
-    "imgOneAlt": "Desmotec picture.",
-    "src": "desmotec.png"
+    "title": "Alter G",
+    "subTitle": "Alter G este un sistem avansat de antrenament anti-gravitațional care permite pacienților să se antreneze cu o fracțiune din greutatea corporală, facilitând recuperarea după accidentări și îmbunătățirea performanței.",
+    "imgOneAlt": "Alter G",
+    "src": "alter-g.webp"
   },
   {
-    "title": "Kineo Intelligent Load",
-    "subTitle": "Kineo Intelligent Load este un sistem revoluționar de antrenament care permite personalizarea și ajustarea automată a sarcinii pentru optimizarea forței și a recuperării musculare.",
-    "imgOneAlt": "Kineo Intelligent Load",
-    "src": "kineo-transformed.png"
+    "title": "Kineo Multistation",
+    "subTitle": "Kineo Multistation este un sistem versatil de antrenament care combină tehnologia inertială cu rezistența adaptivă pentru a oferi exerciții personalizate pentru diverse grupe musculare.",
+    "imgOneAlt": "Kineo Multistation",
+    "src": "kineo-multistation.webp"
   },
   {
-    "title": "Reaxing Lights PRO",
-    "subTitle": "Reaxing Lights PRO este un sistem inovativ de antrenament interactiv, care folosește lumini pentru a îmbunătăți coordonarea, agilitatea și timpul de reacție.",
-    "imgOneAlt": "Reaxing Lights PRO",
-    "src": "reaxing.webp"
+    "title": "Kineo Leg press",
+    "subTitle": "Kineo Leg press este un echipament specializat care utilizează tehnologia inertială pentru a oferi rezistență adaptivă în timpul exercițiilor pentru picioare, maximizând eficiența antrenamentului.",
+    "imgOneAlt": "Kineo Leg press",
+    "src": "kineo-leg-press.webp"
   },
   {
-    "title": "Mad-up BFR",
+    "title": "Skill Court",
+    "subTitle": "Skill Court este o platformă interactivă de antrenament care îmbunătățește agilitatea, coordonarea și timpul de reacție prin exerciții dinamice și jocuri interactive.",
+    "imgOneAlt": "Skill Court",
+    "src": "skill-court.jpg"
+  },
+  {
+    "title": "Vald force decks",
+    "subTitle": "Vald force decks sunt platforme de măsurare a forței care oferă date precise despre performanța musculară, ajutând la evaluarea și monitorizarea progresului în recuperare și antrenament.",
+    "imgOneAlt": "Vald force decks",
+    "src": "vald-force-decks.webp"
+  },
+  {
+    "title": "Vald force frame",
+    "subTitle": "Vald force frame este un sistem de testare a forței care permite evaluarea precisă a capacității musculare în diverse poziții, oferind date valoroase pentru personalizarea programelor de recuperare.",
+    "imgOneAlt": "Vald force frame",
+    "src": "vald-force-frame.webp"
+  },
+  {
+    "title": "Vald speed gates",
+    "subTitle": "Vald speed gates sunt porți de cronometrare avansate care măsoară cu precizie viteza, accelerația și alte metrici de performanță, esențiale pentru evaluarea și îmbunătățirea capacităților atletice.",
+    "imgOneAlt": "Vald speed gates",
+    "src": "vald-speed-gates.webp"
+  },
+  {
+    "title": "Mad up BFR",
     "subTitle": "Mad-up BFR este un sistem de antrenament prin restricție a fluxului sanguin, conceput pentru a crește forța și masa musculară prin aplicarea unei presiuni controlate în timpul exercițiilor.",
-    "imgOneAlt": "Mad-up BFR",
+    "imgOneAlt": "Mad up BFR",
     "src": "madupbfr.jpeg"
   },
   {
-    "title": "ActivForce 2",
-    "subTitle": "ActivForce 2 este un dispozitiv digital de măsurare a forței, destinat profesioniștilor din domeniul sănătății pentru a evalua și monitoriza performanța musculară și recuperarea pacienților.",
-    "imgOneAlt": "ActivForce 2",
-    "src": "active_force_2.webp"
+    "title": "Desmotec E board",
+    "subTitle": "Desmotec E board este un echipament avansat pentru antrenamentul izoinertial, care utilizează rezistența inertială pentru a îmbunătăți forța și funcționalitatea musculară în procesul de recuperare.",
+    "imgOneAlt": "Desmotec E board",
+    "src": "desmotec-e-board.webp"
   },
   {
-    "title": "Senaptec Strobe Classic",
+    "title": "Desmotec D and V Full",
+    "subTitle": "Desmotec este un lider în tehnologia de reabilitare, oferind soluții avansate pentru antrenamentele bazate pe izocinetism și reabilitarea musculară",
+    "imgOneAlt": "Desmotec D and V Full",
+    "src": "desmotec.png"
+  },
+  {
+    "title": "Reaxing Lights Pro",
+    "subTitle": "Reaxing Lights PRO este un sistem inovativ de antrenament interactiv, care folosește lumini pentru a îmbunătăți coordonarea, agilitatea și timpul de reacție.",
+    "imgOneAlt": "Reaxing Lights Pro",
+    "src": "reaxing.webp"
+  },
+  {
+    "title": "Reaxing Lift Pro",
+    "subTitle": "Reaxing Lift Pro este un sistem de antrenament cu greutăți instabile care creează perturbări imprevizibile în timpul exercițiilor, îmbunătățind stabilitatea și controlul neuromuscular.",
+    "imgOneAlt": "Reaxing Lift Pro",
+    "src": "reaxing-lift-pro.jpg"
+  },
+  {
+    "title": "HyperKnee Extension",
+    "subTitle": "HyperKnee Extension este un echipament specializat pentru reabilitarea și întărirea mușchilor extensori ai genunchiului, oferind rezistență controlată pentru a îmbunătăți forța și funcționalitatea articulației după accidentări sau intervenții chirurgicale.",
+    "imgOneAlt": "HyperKnee Extension",
+    "src": "hyperknee-extension.jpg"
+  },
+  {
+    "title": "HyperKnee Flexion",
+    "subTitle": "HyperKnee Flexion este un sistem avansat de antrenament și recuperare dedicat mușchilor flexori ai genunchiului, permițând exerciții precise și controlate pentru îmbunătățirea mobilității și forței în procesul de reabilitare.",
+    "imgOneAlt": "HyperKnee Flexion",
+    "src": "hyperknee-flexion.jpg"
+  },
+  {
+    "title": "EasyTech N3",
+    "subTitle": "EasyTech N3 este un sistem inovator de evaluare și antrenament neuromuscular care oferă biofeedback în timp real, permițând terapeuților să monitorizeze și să optimizeze programele de recuperare pentru diverse afecțiuni musculoscheletale.",
+    "imgOneAlt": "EasyTech N3",
+    "src": "easytech-n3.webp"
+  },
+  {
+    "title": "EasyTech Isokinetic PrimaPlus",
+    "subTitle": "EasyTech Isokinetic PrimaPlus este un sistem complex de evaluare și antrenament izokinetic care permite testarea precisă a forței musculare și dezvoltarea programelor personalizate de reabilitare pentru îmbunătățirea performanței fizice și recuperarea optimă.",
+    "imgOneAlt": "EasyTech Isokinetic PrimaPlus",
+    "src": "easytech-isokinetic-primaplus.webp"
+  },
+  {
+    "title": "Senaptec Strobe",
     "subTitle": "Senaptec Strobe Classic este un dispozitiv de antrenament vizual ce îmbunătățește reacțiile și coordonarea, prin utilizarea unor ochelari speciali care stimulează abilitățile perceptuale.",
-    "imgOneAlt": "Senaptec Strobe Classic",
+    "imgOneAlt": "Senaptec Strobe",
     "src": "senaptec.webp"
   },
   {
-    "title": "RecoveryAir",
+    "title": "Senaptec Symphony",
+    "subTitle": "Senaptec Symphony este un sistem avansat de antrenament vizual-cognitiv care îmbunătățește procesarea vizuală, coordonarea ochi-mână și timpul de reacție prin exerciții interactive personalizate.",
+    "imgOneAlt": "Senaptec Symphony",
+    "src": "senaptec-symphony.webp"
+  },
+  {
+    "title": "MotionGuidance",
+    "subTitle": "MotionGuidance este un sistem vizual de feedback care îmbunătățește controlul mișcării și coordonarea prin ghidare vizuală directă.",
+    "imgOneAlt": "MotionGuidance",
+    "src": "motion-guidance.webp"
+  },
+  {
+    "title": "MTrigger Biofeedback",
+    "subTitle": "MTrigger Biofeedback este un sistem de monitorizare în timp real care oferă feedback auditiv și vizual despre activitatea musculară, ajutând la îmbunătățirea controlului motor și a tehnicii de mișcare.",
+    "imgOneAlt": "MTrigger Biofeedback",
+    "src": "mtrigger-biofeedback.jpg"
+  },
+  {
+    "title": "GreenRoom Motion Analyse System",
+    "subTitle": "GreenRoom Motion Analyse System este un sistem avansat de analiză a mișcărilor care oferă date precise despre performanța musculară și mobilitatea articulară, ajutând la evaluarea și monitorizarea progresului în recuperare și antrenament.",
+    "imgOneAlt": "GreenRoom Motion Analyse System",
+    "src": "greenroom-motion-analyse-system.webp"
+  },
+  {
+    "title": "Aquilo Cryotherapy",
+    "subTitle": "Aquilo Cryotherapy este un sistem avansat de crioterapie care combină compresiunea cu răcirea pentru a reduce inflamația, a accelera recuperarea și a ameliora durerea musculară.",
+    "imgOneAlt": "Aquilo Cryotherapy",
+    "src": "aquilo-cryotherapy.webp"
+  },
+  {
+    "title": "Recovery Air Therabody",
     "subTitle": "RecoveryAir este un sistem de compresie pneumatică conceput pentru a îmbunătăți circulația sanguină și a accelera recuperarea musculară prin masaj secvențial.",
-    "imgOneAlt": "RecoveryAir",
+    "imgOneAlt": "Recovery Air Therabody",
     "src": "recoveryair.jpeg"
+  },
+  {
+    "title": "Ecograf Vinno",
+    "subTitle": "Ecografie Vinno reprezintă o tehnologie de imagistică avansată care oferă imagini de înaltă claritate, utilizată în diagnosticarea precisă și monitorizarea condițiilor medicale în timp real.",
+    "imgOneAlt": "Ecograf Vinno",
+    "src": "ecograf-vinno.jpg"
   },
   {
     "title": "Compex",
@@ -48,49 +150,51 @@
     "src": "compex.webp"
   },
   {
-    "title": "Theragun Pro",
-    "subTitle": "Theragun PRO este un dispozitiv de masaj terapeutic de înaltă performanță, proiectat pentru a reduce durerea musculară și a îmbunătăți recuperarea prin terapie percusivă profundă.",
-    "imgOneAlt": "Theragun Pro",
-    "src": "theragun.webp"
+    "title": "EPI Therapy",
+    "subTitle": "EPI (electroliza percutanată intratisulară) este o tehnică avansată de terapie fizică care folosește impulsuri electrice pentru a trata țesuturile moi și a accelera recuperarea în cazul leziunilor musculare.",
+    "imgOneAlt": "EPI Therapy",
+    "src": "epi-therapy.png"
   },
   {
-    "title": "MotionGuidance",
-    "subTitle": "MotionGuidance este un sistem vizual de feedback care îmbunătățește controlul mișcării și coordonarea prin ghidare vizuală directă.",
-    "imgOneAlt": "MotionGuidance"
-  },
-  {
-    "title": "EPI (electroliza percutanată intratisulară)",
-    "subTitle": "Este o tehnică avansată de terapie fizică care folosește impulsuri electrice pentru a trata țesuturile moi și a accelera recuperarea în cazul leziunilor musculare.",
-    "imgOneAlt": "EPI (electroliza percutanata intratisulara)"
-  },
-  {
-    "title": "AS Super 4 Digital",
+    "title": "AS Super4 Electro-DryNeedling",
     "subTitle": "AS Super 4 Digital este un aparat modern de electroterapie care oferă diverse tratamente pentru stimularea musculară și alinarea durerii, adaptabil pentru necesitățile individuale ale fiecărui pacient.",
-    "imgOneAlt": "AS Super 4 Digital"
+    "imgOneAlt": "AS Super4 Electro-DryNeedling",
+    "src": "as-super4.webp"
   },
   {
-    "title": "Globus Diacare",
-    "subTitle": "Globus Diacare este un dispozitiv de terapie prin diatermie care utilizează căldura pentru a stimula circulația sângelui și a accelera procesele naturale de vindecare ale corpului.",
-    "imgOneAlt": "Globus Diacare"
+    "title": "Winback Back4",
+    "subTitle": "Winback Back4 este un sistem terapeutic care utilizează tehnologia de radiofrecvență pentru a stimula regenerarea țesuturilor, a reduce durerea și a îmbunătăți mobilitatea articulară.",
+    "imgOneAlt": "Winback Back4",
+    "src": "winback-back4.webp"
   },
   {
-    "title": "Globus Medisound",
-    "subTitle": "Globus Medisound este un sistem terapeutic care folosește ultrasunete pentru a trata afecțiuni musculo-scheletice, stimulând regenerarea țesuturilor și reducând inflamația.",
-    "imgOneAlt": "Globus Medisound"
+    "title": "LightForce XPi 25W",
+    "subTitle": "LightForce XPi 25W este un sistem avansat de terapie cu laser de înaltă putere, utilizat pentru a reduce durerea, a accelera vindecarea țesuturilor și a îmbunătăți recuperarea după accidentări.",
+    "imgOneAlt": "LightForce XPi 25W",
+    "src": "lightforce-xpi.png"
   },
   {
-    "title": "Ecografie Vinno",
-    "subTitle": "Ecografie Vinno reprezintă o tehnologie de imagistică avansată care oferă imagini de înaltă claritate, utilizată în diagnosticarea precisă și monitorizarea condițiilor medicale în timp real.",
-    "imgOneAlt": "Ecografie Vinno"
+    "title": "Manuthera 242",
+    "subTitle": "Manuthera 242 este o masă de tratament multifuncțională avansată care permite terapeuților să efectueze o gamă largă de tehnici de mobilizare și manipulare cu precizie și eficiență.",
+    "imgOneAlt": "Manuthera 242",
+    "src": "manuthera-242.jpg"
   },
   {
-    "title": "Powerplay",
-    "subTitle": "Powerplay este un sistem portabil de terapie prin compresie și crioterapie, ideal pentru reducerea durerii și inflamației, facilitând o recuperare rapidă și eficientă.",
-    "imgOneAlt": "Powerplay"
+    "title": "Triton Chattanooga Elongation",
+    "subTitle": "Triton Chattanooga Elongation este un sistem de tracțiune vertebrală care oferă decompresie controlată a coloanei vertebrale pentru a trata herniile de disc, stenoza spinală și alte afecțiuni spinale.",
+    "imgOneAlt": "Triton Chattanooga Elongation",
+    "src": "triton-chattanooga.jpg"
   },
   {
-    "title": "HyperVolt",
-    "subTitle": "HyperVolt este un dispozitiv de masaj cu percuție de înaltă intensitate, conceput pentru a relaxa mușchii tensionați, a îmbunătăți mobilitatea și a accelera recuperarea după efort fizic.",
-    "imgOneAlt": "HyperVolt"
+    "title": "Criosauna CryoMed Pro",
+    "subTitle": "Criosauna CryoMed Pro este un sistem avansat de crioterapie cu corp întreg care expune corpul la temperaturi extrem de scăzute pentru a reduce inflamația, a ameliora durerea și a accelera recuperarea.",
+    "imgOneAlt": "Criosauna CryoMed Pro",
+    "src": "cryomed-pro.png"
+  },
+  {
+    "title": "TheraGun Pro",
+    "subTitle": "Theragun PRO este un dispozitiv de masaj terapeutic de înaltă performanță, proiectat pentru a reduce durerea musculară și a îmbunătăți recuperarea prin terapie percusivă profundă.",
+    "imgOneAlt": "TheraGun Pro",
+    "src": "theragun.webp"
   }
 ]
